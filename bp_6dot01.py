@@ -1,3 +1,4 @@
+import os 
 def szorzoTabla(alap, kezdete, vege):
     print ('Az', alap, '-ös szorzótábla :')
     n = kezdete
@@ -6,6 +7,3 @@ def szorzoTabla(alap, kezdete, vege):
         n = n +1
 
 szorzoTabla(10,2,7)
-
-
-
