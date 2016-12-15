@@ -2,20 +2,32 @@ import struct
 import os
 import sys
 import curses
+import zipfile
+import datetime
 FILENAME = "smcfancontrol_2_4.zip"
 FOLDER = "$HOME//hello-word/"
-data = open(os.path.expandvars(FOLDER+FILENAME), 'rb').read()
+#data = open(os.path.expandvars(FOLDER+FILENAME), 'rb').read()
 # data = open('fajlom.zip', 'rb').read()
 start = 0
-for i in range(3):                      # megnezzuk az elso harom fajl fejlecet
-    start += 14
-    fields = struct.unpack('LLLHH', data[start:start+28])
-    crc32, comp_size, uncomp_size, filenamesize, extra_size =  fields
 
-    start += 16
-    filename = data[start:start+filenamesize]
-    start += filenamesize
-    extra = data[start:start+extra_size]
-    print(filename, hex(crc32), comp_size, uncomp_size)
+def print_info(archive_name):
+    zf = zipfile.ZipFile(archive_name)
+    for info in zf.infolist():
+        print (info.filename)
+        print ('\tComment:\t', info.comment)
+        print ('\tModified:\t', datetime.datetime(*info.date_time))
+        print ('\tSystem:\t\t', info.create_system, '(0 = Windows, 3 = Unix)')
+        print ('\tZIP version:\t', info.create_version)
+        print ('\tCompressed:\t', info.compress_size, 'bytes')
+        print ('\tUncompressed:\t', info.file_size, 'bytes')
+        
 
-    start += extra_size + comp_size     # tovabblepes a kovetkezo fejlechez
+print_info(os.path.expandvars(FOLDER+FILENAME))
+
+
+xf = zipfile.ZipFile('zipfile_write_arcname.zip', mode='w')
+try:
+    xf.write('README.md', arcname='NOT_README.txt')
+finally:
+    xf.close()
+print_info('zipfile_write_arcname.zip')
