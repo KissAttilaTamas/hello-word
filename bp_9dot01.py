@@ -14,9 +14,9 @@ elif v=='w' or v=='W':
     while 1:
         try:
             txt=sys.stdin.readline()
+            w.write(txt)
         except KeyboardInterrupt:
             break
         if not txt:
             break
-        w.write(txtw)
     w.close()

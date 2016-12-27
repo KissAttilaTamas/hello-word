@@ -9,12 +9,3 @@
 9
 
 1
-most irom
-
-
-elso
-kettes
-harmas
-ujsor
-ujsor2
-
