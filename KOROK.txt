@@ -1,0 +1,7 @@
+kor sugara = 1.00 cm  felszin = 12.57 cm2 terfogat= 4.19 cm3
+kor sugara = 4.50 cm  felszin = 254.47 cm2 terfogat= 381.70 cm3
+kor sugara = 65.70 cm  felszin = 54242.61 cm2 terfogat= 1187913.23 cm3
+kor sugara = 78.00 cm  felszin = 76453.80 cm2 terfogat= 1987798.77 cm3
+kor sugara = 8.90 cm  felszin = 995.38 cm2 terfogat= 2952.97 cm3
+kor sugara = 10.00 cm  felszin = 1256.64 cm2 terfogat= 4188.79 cm3
+kor sugara = 13.15 cm  felszin = 2173.01 cm2 terfogat= 9525.02 cm3
